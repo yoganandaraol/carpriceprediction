@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://car-resale-value.herokuapp.com/predict -->
+<html lang="zxx" class="no-js" style="display: block;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="http://car-resale-value.herokuapp.com/static/img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="Tech Bits - Yoga">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		
+		<!-- Site Title -->
+		<title>Splendid Cars</title>
+
+			<!--
+			CSS
+			============================================= -->
+			<!-- <link rel="stylesheet" href="./SplendidCars/linearicons.css">
+			<link rel="stylesheet" href="./SplendidCars/font-awesome.min.css"> 
+			<link rel="stylesheet" href="./SplendidCars/magnific-popup.css"> 
+			<link rel="stylesheet" href="./SplendidCars/owl.carousel.css"> -->
+			<!-- <script type="text/javascript" charset="UTF-8" src="./SplendidCars/common.js.download">
+		</script><script type="text/javascript" charset="UTF-8" src="./SplendidCars/util.js.download"></script> -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css')}}">
+			<link rel="stylesheet" href="{{ url_for('static', filename='nice-select.css')}}">					
+			<link rel="stylesheet" href="{{ url_for('static', filename='animate.min.css')}}">
+			<link rel="stylesheet" href="{{ url_for('static', filename='jquery-ui.css')}}">		
+			
+			<link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+		
+	</head>
+		<body data-new-gr-c-s-check-loaded="14.991.0" data-gr-ext-installed="" style="display: block;" class="bg">
+
+			  <header id="header">
+			    <div class="container">
+			    	<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+				        <a href="http://car-resale-value.herokuapp.com/index.html">
+    				        <img src="/static/used_cars_logo.png" alt="" title="">
+				        </a>
+				      </div>
+			    	</div>
+			    </div>
+			  </header><!-- #header -->
+
+
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>	
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center" style="height: 977px;">
+						
+						<div class="col-lg-5  col-md-6 header-right">
+							<h4 class="text-white pb-30">Provide Car Details.</h4>
+							<form action="{{ url_for('predict')}}" method="post" class="form" role="form" autocomplete="off">
+							    <div class="form-group">
+							       	<div class="default-select" id="default-select" "="">
+										<select name="Year" required="required" style="display: none;">
+											<option value="" disabled="" selected="" hidden="">When You Bought</option>
+											<option value="2005">2005</option>
+											<option value="2006">2006</option>
+											<option value="2007">2007</option>
+											<option value="2008">2008</option>
+											<option value="2009">2009</option>
+											<option value="2010">2010</option>
+											<option value="2011">2011</option>
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+											<option value="2015">2015</option>
+											<option value="2016">2016</option>
+											<option value="2017">2017</option>
+											<option value="2018">2018</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+										</select><div class="nice-select" tabindex="0"><span class="current">When You Bought</span><ul class="list"><li data-value="" class="option selected disabled">When You Bought</li><li data-value="2005" class="option">2005</li><li data-value="2006" class="option">2006</li><li data-value="2007" class="option">2007</li><li data-value="2008" class="option">2008</li><li data-value="2009" class="option">2009</li><li data-value="2010" class="option">2010</li><li data-value="2011" class="option">2011</li><li data-value="2012" class="option">2012</li><li data-value="2013" class="option">2013</li><li data-value="2014" class="option">2014</li><li data-value="2015" class="option">2015</li><li data-value="2016" class="option">2016</li><li data-value="2017" class="option">2017</li><li data-value="2018" class="option">2018</li><li data-value="2019" class="option">2019</li><li data-value="2020" class="option">2020</li><li data-value="2021" class="option">2021</li></ul></div>
+									</div>
+							    </div>
+								<div class="from-group">
+							    	<input class="form-control txt-field" type="text" name="Present_Price" placeholder="Enter Price Bought (In Lakhs)" required="required">
+							    </div>
+								<div class="from-group">
+							    	<input class="form-control txt-field" type="text" name="Kms_Driven" placeholder="Enter KMS Driven" required="required">
+							    </div>
+								<div class="form-group">
+							       	<div class="default-select" id="default-select" "="">
+										<select name="Owner" required="required" style="display: none;">
+											<option value="" disabled="" selected="" hidden="">Number of previous owners</option>
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select><div class="nice-select" tabindex="0"><span class="current">Number of previous owners</span><ul class="list"><li data-value="" class="option selected disabled">Number of previous owners</li><li data-value="0" class="option">0</li><li data-value="1" class="option">1</li><li data-value="2" class="option">2</li><li data-value="3" class="option">3</li></ul></div>
+									</div>
+							    </div>
+							    <div class="form-group row">
+							        <div class="col-md-6 wrap-left">
+								       	<div class="default-select" id="default-select" "="">
+											<select name="Fuel_Type_Petrol" required="required" style="display: none;">
+												<option value="" disabled="" selected="" hidden="">Fuel Type</option>
+												<option value="Petrol">Petrol</option>
+												<option value="Diesel">Diesel</option>
+												<option value="CNG">CNG</option>
+											</select><div class="nice-select" tabindex="0"><span class="current">Fuel Type</span><ul class="list"><li data-value="" class="option selected disabled">Fuel Type</li><li data-value="Petrol" class="option">Petrol</li><li data-value="Diesel" class="option">Diesel</li><li data-value="CNG" class="option">CNG</li></ul></div>
+										</div>
+							        </div>
+							        <div class="col-md-6 wrap-right">
+										<div class="default-select" id="default-select" "="">
+											<select name="Transmission_Manual" required="required" style="display: none;">
+												<option value="" disabled="" selected="" hidden="">Transmission Type</option>
+												<option value="Manual">Manual</option>
+												<option value="Automatic">Automatic</option>
+											</select><div class="nice-select" tabindex="0"><span class="current">Transmission Type</span><ul class="list"><li data-value="" class="option selected disabled">Transmission Type</li><li data-value="Manual" class="option">Manual</li><li data-value="Automatic" class="option">Automatic</li></ul></div>
+										</div>
+							        </div>
+							    </div>							    
+							    <div class="from-group">
+							    	<div class="default-select" id="default-select" "="">
+										<select name="Seller_Type_Individual" required="required" style="display: none;">
+											<option value="" disabled="" selected="" hidden="">Are you a Dealer</option>
+											<option value="Dealer">Yes</option>
+											<option value="Individual">No</option>
+										</select><div class="nice-select" tabindex="0"><span class="current">Are you a Dealer</span><ul class="list"><li data-value="" class="option selected disabled">Are you a Dealer</li><li data-value="Dealer" class="option">Yes</li><li data-value="Individual" class="option">No</li></ul></div>
+									</div>
+							    </div>
+								<br>
+							    <div class="form-group row">
+							        <div class="col-md-12">
+							            <button type="submit" class="btn btn-default btn-lg btn-block text-center text-uppercase">Get market price</button>
+							        </div>
+							    </div>
+							</form>
+						</div>	
+						<div class="banner-content col-lg-7 col-md-6">
+							<div>
+								
+							</div>
+							<div class="">
+								<h6 class="text-white ">Best resale value for your car!</h6>
+								<h1 class="text-white text-uppercase">
+									{{ prediction_text }}
+								</h1>
+								<p class="pt-20 pb-20 text-white">
+									This is the best resale value for selling your used car.
+								</p>
+								<!-- <a href="http://car-resale-value.herokuapp.com/predict#" class="primary-btn text-uppercase">Get Your Car Now</a> -->
+							</div>
+						</div>
+					</div>
+				</div>					
+			</section>
+			<!-- End banner Area -->	
+			
+			<script src="static/jquery-2.2.4.min.js.download"></script>
+			<script src="static/popper.min.js.download" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="static/bootstrap.min.js.download"></script>			
+			<script type="text/javascript" src="static/js"></script>
+			<script src="static/jquery-ui.js.download"></script>			
+  			<script src="static/easing.min.js.download"></script>			
+			<script src="static/hoverIntent.js.download"></script>
+			<script src="static/superfish.min.js.download"></script>	
+			<script src="static/jquery.ajaxchimp.min.js.download"></script>
+			<script src="static/jquery.magnific-popup.min.js.download"></script>	
+			<script src="static/owl.carousel.min.js.download"></script>			
+			<script src="static/jquery.sticky.js.download"></script>
+			<script src="static/jquery.nice-select.min.js.download"></script>	
+			<script src="static/waypoints.min.js.download"></script>
+			<script src="static/jquery.counterup.min.js.download"></script>					
+			<script src="static/parallax.min.js.download"></script>		
+			<script src="static/mail-script.js.download"></script>	
+			<script src="static/main.js.download"></script>	
+		
+	
+
+
+</body></html>
